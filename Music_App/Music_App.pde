@@ -20,10 +20,10 @@ void setup() {
   //size() or fullScreen()
   //Display Algorithm
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder, like loadImage
-  String groove = "groove.mp3";
+  String RickRoll = "Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3";
   String extension = ".mp3";
-  String pathway = "FreeWare Music/MusicDownload/"; //Relative Path
-  String path = sketchPath( pathway + groove ); //Absolute Path
+  String pathway = "../"; //Relative Path
+  String path = sketchPath( pathway + RickRoll ); //Absolute Path
   // See: https://poanchen.github.io/blog/2016/11/15/how-to-add-background-music-in-processing-3.0
   println(path);
    song[0] = minim.loadFile( path );
@@ -35,9 +35,9 @@ void setup() {
   //For Prototyping, print all information to the console first
   //Verifying Meta Data, 18 println's 
   //Repeat: println("?", songMetaData1.?() );
-    println("File Name", songMetaData[0].fileName() ); //Data Correct, Verified in Console
+  println("File Name", songMetaData[0].fileName() ); //Data Correct, Verified in Console
   //Must use pure Java at OS Level to list fileName before loading Playlist
-    println("Song Length (in milliseconds)", songMetaData[0].length() );
+  println("Song Length (in milliseconds)", songMetaData[0].length() );
   println("Song Length (in seconds)", songMetaData[0].length()/1000 ); 
   println("Song Length (in minutes & seconds)", songMetaData[0].length()/1000/60, "minutes", ( songMetaData[0].length()/1000 - ( songMetaData[0].length()/1000/60)*60 ), "seconds" ); //Gets Formula
   println("Song Title", songMetaData[0].title() );
@@ -59,7 +59,7 @@ void setup() {
 void draw() {
   //Note: Looping Function
   //Note: logical operators could be nested IFs
-    if ( song[0].isLooping() && song[0].loopCount()!=-1 ) println("There are", song[0].loopCount(), "loops left.");
+  if ( song[0].isLooping() && song[0].loopCount()!=-1 ) println("There are", song[0].loopCount(), "loops left.");
   if ( song[0].isLooping() && song[0].loopCount()==-1 ) println("Looping Infinitely");
   if ( song[0].isPlaying() && !song[0].isLooping() ) println("Play Once");
   //
