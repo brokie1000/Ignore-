@@ -1,3 +1,5 @@
+import java.io.*; //Pure Java Library
+//
 //Library: use Sketch / Import Library / Minim
 import ddf.minim.*;
 import ddf.minim.analysis.*;
@@ -7,6 +9,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
 //Global Variables
+File musicFolder; //Class for java.io.* library
 Minim minim; //creates object to access all functions
 int numberOfSongs = 8; //Number of Files in Folder, OS to count
 int numberOfSoundEffects = 4; //Number of Files in Folder, OS to count
