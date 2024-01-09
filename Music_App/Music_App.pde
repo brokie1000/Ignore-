@@ -20,13 +20,13 @@ PFont generalFont;
 color purple = #2C08FF;
 //
 void setup() {
-  //size() or fullScreen()
+  size(600, 400);
   //Display Algorithm
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder, like loadImage
-  String RickRoll = "Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3";
+  String Ring = "Your_Phone_Ringing_-_Funny_Asian-650683.mp3";
   String extension = ".mp3";
   String pathway = "../"; //Relative Path
-  String path = sketchPath( pathway + RickRoll ); //Absolute Path
+  String path = sketchPath( pathway + Ring ); //Absolute Path
   // See: https://poanchen.github.io/blog/2016/11/15/how-to-add-background-music-in-processing-3.0
   println(path);
    song[0] = minim.loadFile( path );
@@ -38,25 +38,6 @@ void setup() {
   //For Prototyping, print all information to the console first
   //Verifying Meta Data, 18 println's 
   //Repeat: println("?", songMetaData1.?() );
-  println("File Name", songMetaData[0].fileName() ); //Data Correct, Verified in Console
-  //Must use pure Java at OS Level to list fileName before loading Playlist
-  println("Song Length (in milliseconds)", songMetaData[0].length() );
-  println("Song Length (in seconds)", songMetaData[0].length()/1000 ); 
-  println("Song Length (in minutes & seconds)", songMetaData[0].length()/1000/60, "minutes", ( songMetaData[0].length()/1000 - ( songMetaData[0].length()/1000/60)*60 ), "seconds" ); //Gets Formula
-  println("Song Title", songMetaData[0].title() );
-  println("Author", songMetaData[0].author() );
-  println("Composer", songMetaData[0].composer() );
-  println("Orchestra", songMetaData[0].orchestra() );
-  println("Album", songMetaData[0].album() );
-  println("Disk", songMetaData[0].disc() );
-  println("Publisher", songMetaData[0].publisher() );
-  println("Date Released", songMetaData[0].date() );
-  println("Copyright", songMetaData[0].copyright() );
-  println("Comments", songMetaData[0].comment() );
-  println("Lyrics", songMetaData[0].lyrics() ); //OPTIONAL: Music App Sing Along
-  println("Track", songMetaData[0].track() );
-  println("Genre", songMetaData[0].genre() );
-  println("Encoded", songMetaData[0].encoded() );
 } //End setup
 //
 void draw() {
@@ -70,7 +51,12 @@ void draw() {
   //println( "Song Position", song1.position(), "Song Length", song1.length() );
   //
   // songMetaData1.title()
-  rect(width*1/4, height*0, width*1/2, height*3/10); //mistake
+   // Draw a square
+  float x = 100;  // X-coordinate of the top-left corner
+  float y = 150;  // Y-coordinate of the top-left corner
+  float sideLength = 200;  // Length of each side
+  rect(x, y, sideLength, sideLength);
+  rect(width*1/4, height*0, width*3/10, height*2/20); //mistake
   fill(purple); //Ink
   textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
